@@ -123,7 +123,7 @@ try:
                                                         RobotLeft()
                                                         flag=0
                                                 time.sleep(1.5)
-                                                stop()
+                                                RobotStop()
                                                 time.sleep(1)
                                         else:
                                                 RobotForward()
