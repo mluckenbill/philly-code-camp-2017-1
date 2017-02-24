@@ -11,6 +11,23 @@ GPIO.setup(TRIG,GPIO.OUT)                  # initialize GPIO Pin as outputs
 GPIO.setup(ECHO,GPIO.IN)                   # initialize GPIO Pin as input
 
 time.sleep(5)
+
+
+# Set which GPIO pins the drive outputs are connected to
+LEFT_WHEEL_FORWARD = 27
+RIGHT_WHEEL_FORWARD = 5
+
+LEFT_WHEEL_REVERSE = 22
+RIGHT_WHEEL_REVERSE = 6
+
+
+# Set all of the drive pins as output pins
+motors = [LEFT_WHEEL_FORWARD, RIGHT_WHEEL_FORWARD, LEFT_WHEEL_REVERSE, RIGHT_WHEEL_REVERSE]
+
+for item in motors:
+  GPIO.setup(item, GPIO.OUT)        
+
+
 # Function to set both drives off
 def RobotStop():
   GPIO.output(LEFT_WHEEL_FORWARD, GPIO.LOW)
