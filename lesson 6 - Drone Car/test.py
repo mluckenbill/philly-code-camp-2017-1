@@ -27,42 +27,40 @@ def RobotForward():
   GPIO.output(RIGHT_WHEEL_REVERSE,GPIO.LOW)
         
 def RobotLeft():
-        RobotStop()
-        GPIO.output(LEFT_WHEEL_FORWARD, GPIO.LOW)
-        GPIO.output(RIGHT_WHEEL_FORWARD, GPIO.HIGH)
-
-        GPIO.output(LEFT_WHEEL_REVERSE, GPIO.LOW)
+  RobotStop()
+  GPIO.output(LEFT_WHEEL_FORWARD, GPIO.LOW)
+  GPIO.output(RIGHT_WHEEL_FORWARD, GPIO.HIGH)
+  GPIO.output(LEFT_WHEEL_REVERSE, GPIO.LOW)
   GPIO.output(RIGHT_WHEEL_REVERSE,GPIO.LOW)
         
 
 def RobotRight():
-        RobotStop()
-        GPIO.output(LEFT_WHEEL_FORWARD, GPIO.HIGH)
-        GPIO.output(RIGHT_WHEEL_FORWARD, GPIO.LOW)
-
-        GPIO.output(LEFT_WHEEL_REVERSE, GPIO.LOW)
+  RobotStop()
+  GPIO.output(LEFT_WHEEL_FORWARD, GPIO.HIGH)
+  GPIO.output(RIGHT_WHEEL_FORWARD, GPIO.LOW)
+  GPIO.output(LEFT_WHEEL_REVERSE, GPIO.LOW)
   GPIO.output(RIGHT_WHEEL_REVERSE,GPIO.LOW)
 
 def RobotReverse():
-        RobotStop()
-        GPIO.output(LEFT_WHEEL_REVERSE, GPIO.HIGH)
-        GPIO.output(RIGHT_WHEEL_REVERSE, GPIO.HIGH)
-        GPIO.output(LEFT_WHEEL_FORWARD, GPIO.LOW)
-        GPIO.output(RIGHT_WHEEL_FORWARD, GPIO.LOW)
+  RobotStop()
+  GPIO.output(LEFT_WHEEL_REVERSE, GPIO.HIGH)
+  GPIO.output(RIGHT_WHEEL_REVERSE, GPIO.HIGH)
+  GPIO.output(LEFT_WHEEL_FORWARD, GPIO.LOW)
+  GPIO.output(RIGHT_WHEEL_FORWARD, GPIO.LOW)
 
 def RobotSpinLeft():
-        RobotStop()
-        GPIO.output(RIGHT_WHEEL_REVERSE, GPIO.LOW)
-        GPIO.output(RIGHT_WHEEL_FORWARD, GPIO.HIGH)
-        GPIO.output(LEFT_WHEEL_FORWARD, GPIO.LOW)
-        GPIO.output(LEFT_WHEEL_REVERSE, GPIO.HIGH)
+  RobotStop()
+  GPIO.output(RIGHT_WHEEL_REVERSE, GPIO.LOW)
+  GPIO.output(RIGHT_WHEEL_FORWARD, GPIO.HIGH)
+  GPIO.output(LEFT_WHEEL_FORWARD, GPIO.LOW)
+  GPIO.output(LEFT_WHEEL_REVERSE, GPIO.HIGH)
         
 def RobotSpinRight():
-        RobotStop()
-        GPIO.output(RIGHT_WHEEL_REVERSE, GPIO.HIGH)
-        GPIO.output(RIGHT_WHEEL_FORWARD, GPIO.LOW)
-        GPIO.output(LEFT_WHEEL_FORWARD, GPIO.HIGH)
-        GPIO.output(LEFT_WHEEL_REVERSE, GPIO.LOW)
+  RobotStop()
+  GPIO.output(RIGHT_WHEEL_REVERSE, GPIO.HIGH)
+  GPIO.output(RIGHT_WHEEL_FORWARD, GPIO.LOW)
+  GPIO.output(LEFT_WHEEL_FORWARD, GPIO.HIGH)
+  GPIO.output(LEFT_WHEEL_REVERSE, GPIO.LOW)
 
 RobotStop()
 count=0
