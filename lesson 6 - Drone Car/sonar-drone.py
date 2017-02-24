@@ -12,6 +12,9 @@ GPIO.setmode(GPIO.BCM)
 TRIG = 18
 ECHO = 23
 
+GPIO.setup(TRIG, GPIO.OUT)
+GPIO.setup(ECHO, GPIO.IN)
+
 # Set which GPIO pins the drive outputs are connected to
 LEFT_WHEEL_FORWARD = 27
 RIGHT_WHEEL_FORWARD = 5
@@ -97,36 +100,34 @@ try:
                         time.sleep(0.00001)                     #Delay of 0.00001 seconds
                         GPIO.output(TRIG, False)                #Set TRIG as LOW
                         while GPIO.input(ECHO)==0:              #Check whether the ECHO is LOW
-                                GPIO.output(led, False)             
                                 pulse_start = time.time()
-                                        while GPIO.input(ECHO)==1:              #Check whether the ECHO is HIGH
-                                                GPIO.output(led, False) 
-                                                pulse_end = time.time()
-                                                pulse_duration = pulse_end - pulse_start #time to get back the pulse to sensor
-                                                distance = pulse_duration * 17150        #Multiply pulse duration by 17150 (34300/2) to get distance
-                                                distance = round(distance,2)                 #Round to two decimal points
-                                                avgDistance=avgDistance+distance
-                                                avgDistance=avgDistance/5
-                                                print avgDistance
-                                                flag=0
-                                                if avgDistance < 15:      #Check whether the distance is within 15 cm range
-                                                        count=count+1
-                                                        RobotStop()
-                                                        time.sleep(1)
-                                                        RobotReverse()
-                                                        time.sleep(1.5)
-                                                                if (count%3 ==1) & (flag==0):
-                                                                        RobotRight()
-                                                                        flag=1
-                                                                else:
-                                                                        RobotLeft()
-                                                                        flag=0
-                                                                        time.sleep(1.5)
-                                                                        stop()
-                                                                        time.sleep(1)
+                                while GPIO.input(ECHO)==1:              #Check whether the ECHO is HIGH
+                                        pulse_end = time.time()
+                                        pulse_duration = pulse_end - pulse_start #time to get back the pulse to sensor
+                                        distance = pulse_duration * 17150        #Multiply pulse duration by 17150 (34300/2) to get distance
+                                        distance = round(distance,2)                 #Round to two decimal points
+                                        avgDistance=avgDistance+distance
+                                        avgDistance=avgDistance/5
+                                        print avgDistance
+                                        flag=0
+                                        if avgDistance < 15:      #Check whether the distance is within 15 cm range
+                                                count=count+1
+                                                RobotStop()
+                                                time.sleep(1)
+                                                RobotReverse()
+                                                time.sleep(1.5)
+                                                if (count%3 ==1) & (flag==0):
+                                                        RobotRight()
+                                                        flag=1
                                                 else:
-                                                        RobotForward()
+                                                        RobotLeft()
                                                         flag=0
+                                                        time.sleep(1.5)
+                                                        stop()
+                                                        time.sleep(1)
+                                        else:
+                                                RobotForward()
+                                                flag=0
 
 except KeyboardInterrupt:
 
