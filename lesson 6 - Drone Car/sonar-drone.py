@@ -122,9 +122,9 @@ try:
                                                 else:
                                                         RobotLeft()
                                                         flag=0
-                                                        time.sleep(1.5)
-                                                        stop()
-                                                        time.sleep(1)
+                                                time.sleep(1.5)
+                                                stop()
+                                                time.sleep(1)
                                         else:
                                                 RobotForward()
                                                 flag=0
