@@ -5,11 +5,11 @@ GPIO.setmode(GPIO.BCM)
 GPIO.setwarnings(False)
 GPIO.setup(17,GPIO.OUT)
 
-def led_on()
+def led_on
 	print "LED on"
 	GPIO.output(17,GPIO.HIGH)
 
-def led_off()
+def led_off
 	print "LED off"
 	GPIO.output(17,GPIO.LOW)
 
