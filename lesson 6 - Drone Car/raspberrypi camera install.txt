@@ -1,0 +1,23 @@
+If you have a regular webcam it's ok to use motion out of the box
+https://pimylifeup.com/raspberry-pi-webcam-server/
+
+If you use the raspberry pi camera module v2.1 follow these instructions
+
+Just have a look at the forum page: https://www.raspberrypi.org/forums/viewtopic.php?f=43&t=44966&start=350
+
+Following this instructions made motion working on a latest released jessie on rpi2:
+
+sudo apt-get install -y libjpeg-dev libavformat56 libavformat-dev libavcodec56 libavcodec-dev libavutil54 libavutil-dev libc6-dev zlib1g-dev libmysqlclient18 libmysqlclient-dev libpq5 libpq-dev
+
+wget https://www.dropbox.com/s/6ruqgv1h65zufr6/motion-mmal-lowflyerUK-20151114.tar.gz
+
+tar -zxvf motion-mmal-lowflyerUK-20151114.tar.gz
+./motion -c motion-mmalcam-both.conf
+
+
+Main Code for Wiring up the car
+http://jamespoole.me/2016/04/29/web-controlled-robot-with-video-stream/
+
+
+We can use this command to allow for people whom are using the raspberry pi2 webcam to start the service on start up instead of using motion
+https://www.raspberrypi.org/documentation/linux/usage/rc-local.md
