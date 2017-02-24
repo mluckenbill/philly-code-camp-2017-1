@@ -20,6 +20,7 @@ try:
                 time.sleep(1)
                 led_off()
                 time.sleep(1)
+                
 except KeyboardInterrupt:
         print("Turning off the lights now")
         led_off()
